@@ -22,8 +22,7 @@
   <parent>
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-parent</artifactId>
-    <version>31-SNAPSHOT</version>
-    <relativePath />
+    <version>31</version>
   </parent>
 
   <artifactId>mybatis</artifactId>
@@ -230,6 +229,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.apache.velocity</groupId>
       <artifactId>velocity</artifactId>
       <version>1.7</version>
@@ -258,6 +263,24 @@
       <groupId>ru.yandex.qatools.embed</groupId>
       <artifactId>postgresql-embedded</artifactId>
       <version>2.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -372,11 +395,11 @@
 
   <repositories>
     <!-- Adding for mybatis-parent 31-SNAPSHOT -->
-    <repository>
-      <id>sonatype-oss-snapshots</id>
-      <name>Sonatype OSS Snapshots Repository</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </repository>
+<!--    <repository>-->
+<!--      <id>sonatype-oss-snapshots</id>-->
+<!--      <name>Sonatype OSS Snapshots Repository</name>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </repository>-->
   </repositories>
 
 </project>

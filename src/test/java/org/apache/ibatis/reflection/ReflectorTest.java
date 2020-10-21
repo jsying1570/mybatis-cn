@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 import java.io.Serializable;
 import java.util.List;
 
+import org.apache.ibatis.reflection.invoker.Invoker;
 import org.junit.Assert;
 import org.junit.Test;
 import static com.googlecode.catchexception.apis.BDDCatchException.*;
@@ -31,6 +32,12 @@ public class ReflectorTest {
   public void testGetSetterType() throws Exception {
     ReflectorFactory reflectorFactory = new DefaultReflectorFactory();
     Reflector reflector = reflectorFactory.findForClass(Section.class);
+
+    final Invoker setInvoker = reflector.getSetInvoker("id");
+    Section section = new Section();
+    setInvoker.invoke(section,new Object[]{2L,});
+
+    System.out.println(section.getId());
     Assert.assertEquals(Long.class, reflector.getSetterType("id"));
   }
 

@@ -147,7 +147,8 @@ public class Reflector {
         addMethodConflict(conflictingGetters, name, method);
       }
     }
-    // 处理 conflictingGetters 集合， 防止
+    // 处理 conflictingGetters 集合， 防止冲突,其实主要是子类复写父类的时候，方法的返回值可以放大访问权限，导致一个属性有多个方法，此方法就是用来
+    //解决这个，主要的思想就是判定类型是否是另外一个类型的父类型
     resolveGetterConflicts(conflictingGetters);
   }
 

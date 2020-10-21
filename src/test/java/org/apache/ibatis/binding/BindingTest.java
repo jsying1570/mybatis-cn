@@ -88,6 +88,7 @@ public class BindingTest {
     try (SqlSession session = sqlSessionFactory.openSession()) {
       BoundBlogMapper mapper = session.getMapper(BoundBlogMapper.class);
       Blog b = mapper.selectBlogWithPostsUsingSubSelect(1);
+      System.out.println(b);
       assertEquals(1, b.getId());
       assertNotNull(b.getAuthor());
       assertEquals(101, b.getAuthor().getId());
@@ -106,6 +107,7 @@ public class BindingTest {
         add(3);
         add(5);
       }});
+
       assertEquals(3, posts.size());
       session.rollback();
     }
